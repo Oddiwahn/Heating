@@ -1,0 +1,51 @@
+heating-control:
+  module: heating-control
+  class: HeatingControl
+  switch_heating: switch.sw_therme
+  somebody_home: input_boolean.sw_zuhausestatus
+  heating_mode: input_select.sw_betriebsmodus
+  temperature_vacation: input_number.tcsp_ausflug
+  room_entities:
+  - sensor: climate.trv_esszimmer_rechts
+    night_mode: input_boolean.sw_nachtabsenkung
+    temperature_day: input_number.tcsp_esszimmer
+    temperature_night: input_number.tcsp_nachtabsenkung
+    thermostats:
+    - climate.trv_esszimmer_rechts
+    - climate.trv_esszimmer_links
+  - sensor: climate.trv_kueche
+    night_mode: input_boolean.sw_nachtabsenkung
+    temperature_day: input_number.tcsp_kueche
+    temperature_night: input_number.tcsp_nachtabsenkung
+    thermostats:
+    - climate.trv_kueche
+  - sensor: climate.trv_wohnzimmer
+    night_mode: input_boolean.sw_nachtabsenkung
+    temperature_day: input_number.tcsp_wohnzimmer
+    temperature_night: input_number.tcsp_nachtabsenkung
+    thermostats:
+    - climate.trv_wohnzimmer
+  - sensor: sensor.ble_temperature_th_arbeitszimmer
+    night_mode: input_boolean.sw_nachtabsenkung
+    temperature_day: input_number.tcsp_arbeitszimmer
+    temperature_night: input_number.tcsp_nachtabsenkung
+    thermostats:
+    - climate.trv_arbeitszimmer
+  - sensor: sensor.ble_temperature_th_kinderzimmer
+    night_mode: input_boolean.sw_nachtabsenkung
+    temperature_day: input_number.tcsp_kinderzimmer
+    temperature_night: input_number.tcsp_nachtabsenkung
+    thermostats:
+    - climate.trv_kinderzimmer
+  - sensor: sensor.ble_temperature_th_schlafzimmer
+    night_mode: input_boolean.sw_nachtabsenkung
+    temperature_day: input_number.tcsp_schlafzimmer
+    temperature_night: input_number.tcsp_nachtabsenkung
+    thermostats:
+    - climate.trv_schlafzimmer
+  - sensor: sensor.ble_temperature_th_badezimmer
+    night_mode: input_boolean.sw_nachtabsenkung
+    temperature_day: input_number.tcsp_badezimmer
+    temperature_night: input_number.tcsp_nachtabsenkung
+    thermostats:
+    - climate.trv_badezimmer
